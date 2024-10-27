@@ -15,7 +15,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Install deps
-        run: sudo apt-get install -y autoconf
+        run: sudo apt-get install -y autoconf linux-headers
       - uses: awalsh128/cache-apt-pkgs-action@v1
         with:
           packages: musl-tools # provides musl-gcc
