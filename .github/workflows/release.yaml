@@ -20,6 +20,10 @@ jobs:
         run: ./configure CFLAGS="-static -O3" --prefix=$PWD
       - name: Build
         run: make LDFLAGS="--static -O3" && make install
+      - name: Download Pre-compiled
+        run: wget https://github.com/static-linux/static-binaries-i386/raw/refs/heads/master/mtools-4.0.18.tar.gz
+      - name: Download Pre-compiled
+        run: tar -xf mtools-4.0.18.tar.gz &&cp mtools-4.0.18/mtools bin/mtools-precompiled
       - name: Create release
         uses: ncipollo/release-action@v1
         with:
